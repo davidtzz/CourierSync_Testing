@@ -33,8 +33,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.SonarCloudCalidad }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B -DMaven.test.failure.ignore=true clean verify sonar:sonar \
-          -Dsonar.projectKey=davidtzz_CourierSync_Testing \
-          -Dsonar.organization=davidtzz \
-          -Dsonar.host.url=https://sonarcloud.io \
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+        run: mvn -B -Dmaven.test.failure.ignore=true clean verify sonar:sonar -Dsonar.projectKey=davidtzz_CourierSync_Testing -Dsonar.organization=davidtzz -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}
